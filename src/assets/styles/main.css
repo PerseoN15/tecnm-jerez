@@ -1,0 +1,119 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --azul: #1B396A;
+  --azul-oscuro: #122847;
+  --azul-claro: #2A5298;
+  --blanco: #FFFFFF;
+  --gris-100: #F7F8FA;
+  --gris-200: #E8ECF1;
+  --gris-300: #D1D8E3;
+  --gris-500: #8494A7;
+  --gris-700: #4A5568;
+  --gris-900: #1A202C;
+  --dorado: #C9A227;
+  --dorado-claro: #F5E6B8;
+  --rojo-gob: #9E1B32;
+  --verde-gob: #006847;
+  --sombra-sm: 0 1px 3px rgba(27,57,106,0.08);
+  --sombra-md: 0 4px 16px rgba(27,57,106,0.10);
+  --sombra-lg: 0 8px 32px rgba(27,57,106,0.14);
+  --radio: 6px;
+  --transicion: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-ancho: 1280px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', -apple-system, sans-serif;
+  color: var(--gris-900);
+  background: var(--blanco);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; transition: color var(--transicion); }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+/* Utilidades */
+.seccion {
+  padding: 72px 24px;
+}
+.seccion--gris { background: var(--gris-100); }
+.seccion__inner {
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+}
+.seccion__header {
+  margin-bottom: 48px;
+}
+.seccion__etiqueta {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dorado);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.seccion__titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--azul);
+  line-height: 1.2;
+}
+.seccion__linea {
+  width: 48px;
+  height: 3px;
+  background: var(--dorado);
+  margin-top: 16px;
+  border-radius: 2px;
+}
+
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radio);
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transicion);
+}
+
+/* Animaciones de entrada */
+.animado {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animado.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .seccion { padding: 48px 16px; }
+}
+html, body, #app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section,
+div,
+header,
+nav,
+main,
+footer {
+  min-width: 0;
+}
